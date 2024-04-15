@@ -1,0 +1,120 @@
+@charset 'UTF-8';
+.sec02{
+    border-bottom:1px solid #ddd;
+    padding-bottom:50px;
+    font-size:1.2em;
+}
+.sec02 .container{
+    max-width:960px;
+    margin:0 auto;
+    padding:0 16px;
+}
+.tit-inh{
+    font-size: 0.9em;
+    color:#f00;
+    border-bottom:3px solid #333;
+    padding-bottom:8px;
+}
+.form-join li{
+    display:grid;
+    grid-template-columns: repeat(12,1fr);
+    gap:6px;
+    border-bottom:1px solid #ddd;
+    padding:8px 0;
+}
+
+.form-join li label,
+.form-join li input,
+.form-join li select,
+.form-join li textarea{
+    grid-column:1/-1;
+}
+.form-join li label.gender{
+    grid-column:1/2;
+}
+.form-join li label.gender:last-child{
+    grid-column:2/4;
+}
+.form-join li label.star::before{
+    content:'*';
+    display:inline-block;
+    color:#f00;
+}
+.form-join li input,
+.form-join li select,
+.form-join li textarea{
+    border:none;
+    padding:1em;
+}
+.form-join li:last-child{
+    border:none;
+}
+.form-join .line-border{
+    border:1px solid #ccc;
+}
+#e-mail{
+    grid-column:1/6;
+}
+#e-mail-server{
+    grid-column:8/-1;
+}
+.form-join li:first-child::after{
+    content:'@';
+    display:block;
+    grid-area:2/6/3/8;
+    text-align:center;
+    line-height:34px;
+}
+.form-join li textarea{
+    height:100px;
+}
+input[type="submit"]{
+    background:#385d75;
+    font-weight:700;
+    font-size:1.2em;
+    color:#fff;
+}
+
+
+@media (min-width:768px){
+    .form-join li{
+        border:none;
+    }
+    .form-join li input,
+    .form-join li select,
+    .form-join li textarea{
+        border:1px solid #ccc;
+        grid-column:4/-1;
+    }
+    .form-join li label:first-child{
+        grid-column:1/4;
+    }
+    #e-mail{
+        grid-column:4/6;
+    }
+    .form-join li:first-child::after{
+        grid-area:1/6/2/7;
+    }
+    #e-mail-server{
+        grid-column:7/9;
+    }
+    .form-join li select{
+        grid-column:9/12;
+    }
+    .form-join li label.gender{
+        grid-column:4/5;
+    }
+    .form-join li label.gender:last-child{
+        grid-column:5/6;
+    }
+    .form-join li label.u-info{
+        grid-column:4/-1;
+    }
+    .form-join li:last-child input{
+        grid-column:6/8;
+    }
+
+}
+@media (min-width:960px){
+    
+}

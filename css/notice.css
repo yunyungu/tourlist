@@ -1,0 +1,127 @@
+@charset 'UTF-8';
+
+.sec01{
+    background-image:url(../images/img_top2.jpg);
+}
+.sec02{
+    border-bottom:1px solid #bbb;
+    padding-bottom:100px;
+}
+.sec02 .container{
+    max-width:1280px;
+    margin:0 auto;
+    padding:0 16px;
+}
+.sec02 form{
+    display:grid;
+    grid-template-columns:auto auto;
+    justify-content:end;
+    margin-bottom:1em;
+    font-size:1.2em;
+}
+input[type="text"]{
+    width:200px;
+    height:40px;
+    margin-right:1em;
+    padding:0 1em 0 2.5em;
+    border:none;
+    border-bottom:1px solid #ccc;
+    background:url(../images/ico_search.png) no-repeat 0.5em center;
+    background-size:16px;
+}
+input[type="button"]{
+    width:80px;
+    border:none;
+    background:#384d75;
+    color:#fff;
+}
+.table{
+    margin-bottom:1em;
+    border-top:2px solid #384d75;
+    tab-size:1.2em;
+}
+.thead,.tbody li{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-bottom:1px solid #ccc;
+}
+.th{
+    padding:1em 0;
+    background:rgba(56, 75, 118, 0.1);
+    font-weight:900;
+    text-align:center;
+}
+.th:first-child,.th:nth-child(3),
+.tbody li .list-num,.tbody li .list-hit{
+    display:none;
+}
+.th:nth-child(2),
+.tbody li .list-tit{
+    grid-column:1/4;
+}
+.th:last-child,
+.tbody li .list-hit{
+    grid-column:4/-1;
+}
+.tbody li span{
+    padding:1em 0;
+    text-align:center; 
+}
+.tbody li .list-tit{
+    text-align-last:left;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+.list-date span:first-child{
+    display:none;
+}
+.pagination ul{
+    display:grid;
+    grid-template-columns:repeat(9,1fr);
+    gap:10px;
+    width:180px;
+    margin:0 auto;
+}
+.pagination a{
+    display:grid;
+    justify-content:center;
+    align-items:center;
+    width:20px;
+    height:20px;
+}
+.pagination li.active{
+    background: #384d75;
+    color:#fff;
+}
+.pagination li:hover{
+    background: #ccc;
+}
+
+
+
+
+@media (min-width:540px) {
+    .list-date span:first-child{
+        display:inline;
+    }
+}
+@media (min-width:768px){
+    .thead,.tbody li{
+        grid-template-columns:1fr 8fr 2fr 2fr;
+    }
+    .th:first-child,
+    .tbody li .list-num{
+        display:block;
+        grid-column:1/2;
+    }
+    .th:nth-child(2),
+    .tbody li .list-tit{
+        grid-column:2/3;
+    }
+    .th:nth-child(3),
+    .tbody li .list-hit{
+        display:block;
+        grid-column:3/4;
+    }
+}
